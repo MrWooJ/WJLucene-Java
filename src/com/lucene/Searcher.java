@@ -138,10 +138,12 @@ public class Searcher {
 		return query;
 	}
 
-	public String produceQuery(ArrayList<String> labelValues, ArrayList<String> categoryValues, String NewsbodyQuery, String commentBodyQuery, Date startNewsDate, Date endNewsDate, boolean operatorIsAnd) {
+	public String produceQuery(ArrayList<String> labelValues, ArrayList<String> categoryValues, String NewsbodyQuery, String commentBodyQuery, Date startNewsDate, Date endNewsDate, boolean operatorIsAnd) throws IOException {
 		
 		if (labelValues == null && categoryValues == null && NewsbodyQuery == null && commentBodyQuery == null && startNewsDate == null && commentBodyQuery == null) {
-			
+		
+			 IOException e = new IOException();
+			   throw e;
 		}
 		
 		StringBuffer queryString = new StringBuffer("");
