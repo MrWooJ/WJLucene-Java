@@ -2,12 +2,12 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/Jar Files/lucene-analyzers-3.6.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/Jar Files/swingx-all-1.6.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/Jar Files/jxl.jar"/>
-	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/Jar Files/lucene-core-3.6.2.jar"/>
-	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/Jar Files/poi-3.9.jar"/>
-	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/Jar Files/commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/Jar Files/javafx-ui-swing.jar"/>
+	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/JarFiles/lucene-analyzers-3.6.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/JarFiles/swingx-all-1.6.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/JarFiles/jxl.jar"/>
+	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/JarFiles/lucene-core-3.6.2.jar"/>
+	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/JarFiles/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/JarFiles/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/Hurricanc/Documents/Projects/WJLucene-Java/JarFiles/javafx-ui-swing.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
