@@ -62,7 +62,7 @@ public class LuceneTester {
 		for(ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.getDocument(scoreDoc);
 			docsArray.add(doc);
-			System.out.println(LuceneConstants.PROGRAMNAME+"Result File: " + doc.toString());
+			System.out.println(LuceneConstants.PROGRAMNAME+"File: " + doc.get(LuceneConstants.CORE_NEWSURL));
 		}
 
 		searcher.close();
@@ -87,7 +87,7 @@ public class LuceneTester {
 		for(ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.getDocument(scoreDoc);
 			docsArray.add(doc);
-			System.out.println(LuceneConstants.PROGRAMNAME+"File: " + doc.toString());
+			System.out.println(LuceneConstants.PROGRAMNAME+"File: " + doc.get(LuceneConstants.CORE_NEWSURL));
 		}
 
 		searcher.close();
