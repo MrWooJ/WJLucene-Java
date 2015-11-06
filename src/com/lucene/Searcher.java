@@ -36,14 +36,16 @@ public class Searcher {
 		Directory indexDirectory = FSDirectory.open(new File(indexDirectoryPath));
 		IndexReader indexReader = IndexReader.open(indexDirectory);
 		indexSearcher = new IndexSearcher(indexReader);
-		PersianAnalyzer persianAnalyzer = new PersianAnalyzer(Version.LUCENE_36,PersianAnalyzer.getDefaultStopSet());
+		PersianAnalyzer persianAnalyzer = new PersianAnalyzer(Version.LUCENE_36);
 		queryParser = new QueryParser(Version.LUCENE_36,LuceneConstants.DEFAULT_FIELD,persianAnalyzer);
+		queryParser.setAutoGeneratePhraseQueries(true);
 	}
 
 	public TopDocs search(String searchQuery) throws IOException, ParseException {
 
+		System.out.println(LuceneConstants.PROGRAMNAME+"Query: "+searchQuery);
 		query = queryParser.parse(searchQuery);
-		System.out.println("ParseQuery: "+query.toString());
+		System.out.println(LuceneConstants.PROGRAMNAME+"ParseQuery: "+query.toString());
 		return indexSearcher.search(query, LuceneConstants.MAX_SEARCH);
 	}
 
@@ -107,8 +109,6 @@ public class Searcher {
 				query = query.substring(0, query.length()-4);
 		}
 		
-		System.out.println("QueryProducer: "+query);
-		
 		return query;
 	}
 	
@@ -133,8 +133,6 @@ public class Searcher {
 				query = query.substring(0, query.length()-4);
 		}
 		
-		System.out.println("QueryProducer: "+query);
-
 		return query;
 	}
 
@@ -198,8 +196,6 @@ public class Searcher {
 				query = query.substring(0, query.length()-4);
 		}
 		
-		System.out.println("QueryProducer: "+query);
-
 		return query;
 	}
 

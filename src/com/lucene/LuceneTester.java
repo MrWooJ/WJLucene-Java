@@ -21,7 +21,7 @@ public class LuceneTester {
 	public void createIndex(ViewController vc) throws IOException, BiffException {
 
 		File file = new File(LuceneConstants.INDEX_DIRECTORY);
-
+		
 		if (file.listFiles().length > 2) {
 			vc.changeHeaderMessage(LuceneConstants.MESSAGE_INDEXED);
 			vc.enableButtons(true);
@@ -29,7 +29,7 @@ public class LuceneTester {
 		else {
 			vc.enableButtons(false);
 			vc.changeHeaderMessage(LuceneConstants.MESSAGE_INDEXING);
-			System.out.println("Start Indexing Proccess!");
+			System.out.println(LuceneConstants.PROGRAMNAME+"Start Indexing Proccess!");
 
 			indexer = new Indexer(LuceneConstants.INDEX_DIRECTORY);
 
@@ -40,7 +40,7 @@ public class LuceneTester {
 
 			indexer.close();
 
-			System.out.println(numIndexed+" File Indexed. Time: " +(endTime-startTime)+" ms");					
+			System.out.println(LuceneConstants.PROGRAMNAME+numIndexed+" File Indexed. Time: " +(endTime-startTime)+" ms");
 			vc.changeHeaderMessage(LuceneConstants.MESSAGE_INDEXED);
 			vc.enableButtons(true);
 		}		
@@ -56,13 +56,13 @@ public class LuceneTester {
 
 		ArrayList<Document> docsArray = new ArrayList<Document>();
 
-		System.out.println(hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
+		System.out.println(LuceneConstants.PROGRAMNAME+hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
 		vc.changeHeaderMessage(hits.totalHits + LuceneConstants.MESSAGE_SEARCH + (endTime - startTime) + "ms.");
 
 		for(ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.getDocument(scoreDoc);
 			docsArray.add(doc);
-			System.out.println("Result File: " + doc.toString());
+			System.out.println(LuceneConstants.PROGRAMNAME+"Result File: " + doc.toString());
 		}
 
 		searcher.close();
@@ -81,13 +81,13 @@ public class LuceneTester {
 
 		ArrayList<Document> docsArray = new ArrayList<Document>();
 
-		System.out.println(hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
+		System.out.println(LuceneConstants.PROGRAMNAME+hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
 		vc.changeHeaderMessage(hits.totalHits + LuceneConstants.MESSAGE_SEARCH + (endTime - startTime) + "ms.");
 
 		for(ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.getDocument(scoreDoc);
 			docsArray.add(doc);
-			System.out.println("File: " + doc.toString());
+			System.out.println(LuceneConstants.PROGRAMNAME+"File: " + doc.toString());
 		}
 
 		searcher.close();
@@ -105,7 +105,7 @@ public class LuceneTester {
 		TopDocs hits = searcher.searchCombinedQuery(dictionary, Operator);
 		long endTime = System.currentTimeMillis();
 
-		System.out.println(hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
+		System.out.println(LuceneConstants.PROGRAMNAME+hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
 
 		for(ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.getDocument(scoreDoc);
@@ -127,7 +127,7 @@ public class LuceneTester {
 		TopDocs hits = searcher.search(str);
 		long endTime = System.currentTimeMillis();
 
-		System.out.println(hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
+		System.out.println(LuceneConstants.PROGRAMNAME+hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
 
 		for(ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.getDocument(scoreDoc);
@@ -150,7 +150,7 @@ public class LuceneTester {
 		TopDocs hits = searcher.search(str);
 		long endTime = System.currentTimeMillis();
 
-		System.out.println(hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
+		System.out.println(LuceneConstants.PROGRAMNAME+hits.totalHits +" Documents Found. Time :" + (endTime - startTime));
 
 		for(ScoreDoc scoreDoc : hits.scoreDocs) {
 			Document doc = searcher.getDocument(scoreDoc);
